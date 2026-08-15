@@ -9,13 +9,13 @@ import tools.jackson.databind.ObjectMapper;
 @Component
 public class PaymentFileParser {
 
-    private final ObjectMapper objectMapper;
+  private final ObjectMapper objectMapper;
 
-    public PaymentFileParser(ObjectMapper objectMapper) {
-        this.objectMapper = objectMapper;
-    }
+  public PaymentFileParser(ObjectMapper objectMapper) {
+    this.objectMapper = objectMapper;
+  }
 
-    public PaymentInput parse(InputStream inputStream) throws IOException {
-        return objectMapper.readValue(inputStream, PaymentInput.class);
-    }
+  public PaymentInput parse(InputStream inputStream) throws IOException {
+    return objectMapper.readValue(inputStream, PaymentInput.class);
+  }
 }
