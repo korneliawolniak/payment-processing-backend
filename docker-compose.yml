@@ -30,3 +30,18 @@ services:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka:29092
+
+  postgres:
+    image: postgres:17
+    container_name: payment-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: payment_processing
+      POSTGRES_USER: payment_user
+      POSTGRES_PASSWORD: payment_password
+    volumes:
+      - payment-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  payment-postgres-data:
