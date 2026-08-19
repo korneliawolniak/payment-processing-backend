@@ -28,4 +28,8 @@ public class PaymentEntity {
   public PaymentStatus getStatus() {
     return status;
   }
+
+  public void setStatus(PaymentStatus status) {
+    this.status = status;
+  }
 }
