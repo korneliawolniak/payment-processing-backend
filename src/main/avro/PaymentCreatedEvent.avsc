@@ -1,0 +1,63 @@
+{
+  "type": "record",
+  "name": "PaymentCreatedEvent",
+  "namespace": "com.korneliawolniak.paymentprocessing.avro",
+  "fields": [
+    {
+      "name": "paymentId",
+      "type": "string"
+    },
+    {
+      "name": "debtorName",
+      "type": "string"
+    },
+    {
+      "name": "debtorAccountNumber",
+      "type": "string"
+    },
+    {
+      "name": "currency",
+      "type": "string"
+    },
+    {
+      "name": "transactionCount",
+      "type": "int"
+    },
+    {
+      "name": "totalAmount",
+      "type": "string"
+    },
+    {
+      "name": "transactions",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "TransactionEvent",
+          "fields": [
+            {
+              "name": "transactionId",
+              "type": "string"
+            },
+            {
+              "name": "paymentId",
+              "type": "string"
+            },
+            {
+              "name": "creditorName",
+              "type": "string"
+            },
+            {
+              "name": "creditorAccountNumber",
+              "type": "string"
+            },
+            {
+              "name": "amount",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
