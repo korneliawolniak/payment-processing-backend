@@ -1,0 +1,9 @@
+{
+  "type": "record",
+  "name": "PaymentValidationResult",
+  "namespace": "com.korneliawolniak.paymentprocessing.avro",
+  "fields": [
+    { "name": "paymentId", "type": "string" },
+    { "name": "status", "type": "string" }
+  ]
+}
